@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" id="jqui_theme"/>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.11.3.full.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+        $('li').click(function(){
+            $('li').removeClass("ui-state-focus");
+            $(this).addClass("ui-state-focus")
+        });
+
+            $('#btn_view').button({
+
+            }).click(function(){
+
+                window.open("http://37.120.169.17:8082/vis/index.html?"+ $("li.ui-state-focus").text(),"_self")
+            });
+            $('#btn_edit').button({
+
+            }).click(function(){
+
+            });
+            $('#btn_new').button({
+
+            }).click(function(){
+                $("body").append('<div id="new_dialog" style="text-align: center">Projeckt Name: <input id="inp_newname" style="display: inline"" type="text"/><br><br> <button id="btn_ok">ok</button></div>')
+                $("#new_dialog").dialog({
+                    width: "400"
+                });
+                $("#btn_ok").button().click(function(){
+                    window.open("http://37.120.169.17:8082/vis/edit.html?"+ $("#inp_newname").val(),"_self")
+                })
+            })
+
+        });
+
+
+    </script>
+
+</head>
+<body class="ui-state-default" style="border: none; background-image: none">
+<table width="100%" style="text-align: center ;padding: 0">
+    <tr>
+        <td colspan="2" style="font-size: 2em"> <br>Wilkommen bei<br> <b style="font-size:2.5em">VIS</b><br>Sandbox</td>
+    </tr>
+    <tr>
+        <td colspan="2" style="font-size: 22px"> <br><br><br></td>
+    </tr>
+    <tr>
+        <td style="max-width: 50%">Demos</td>
+        <td>Sandbox</td>
+    </tr>
+    <tr >
+        <td style="width: 50%">
+            <ul style="list-style-type: none;
+                        background: #FFF;
+                        max-height: 300px;
+                        overflow: auto;
+                        max-width: 50%;
+                        min-width: 50%;
+                        text-align: left;
+                        margin-left: 25%;
+                        padding: 0;
+                        border: 4px ridge;
+                        ">
+                <li>metro1 </li>
+                <li>metro1 </li>
+                <li>metro1 </li>
+                <li>metro1 </li>
+                <li>metro1 </li>
+                <li>metro1 </li>
+                <li>metro1 </li>
+                <li>metro1 </li>
+                <li>metro1 </li>
+                <li>metro1 </li>
+                <li>metro11</li>
+                <li>metro12</li>
+                <li>metro13</li>
+                <li>metro14</li>
+                <li>metro15</li>
+                <li>metro16</li>
+                <li>metro17</li>
+            </ul>
+        </td>
+        <td> <ul style="list-style-type: none;
+                        background: #FFF;
+                        max-height: 200px;
+                        overflow: auto;
+                        width: 50%;
+                        text-align: left;
+                        margin-left: 25%;
+                        padding: 0;
+                        border: 4px ridge;
+                        ">
+            <li>x</li>
+            <li>metro2</li>
+            <li>metro3</li>
+            <li>metro4</li>
+            <li>metro5</li>
+            <li>metro6</li>
+            <li>metro7</li>
+            <li>metro8</li>
+            <li>metro9</li>
+            <li>metro0</li>
+            <li>metro11</li>
+            <li>metro12</li>
+            <li>metro13</li>
+            <li>metro14</li>
+            <li>metro15</li>
+            <li>metro16</li>
+            <li>metro17</li>
+        </ul></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="font-size: 1em"><br><button id="btn_view" style="width: 150px; margin: 10px">View</button><button id="btn_edit" style="width: 150px; margin: 10px">Edit</button><button id="btn_new" style="width: 150px; margin: 10px">New</button></td>
+    </tr>
+</table>
+</body>
+</html>
